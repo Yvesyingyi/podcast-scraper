@@ -32,7 +32,7 @@ while True:
         if tag_content == "Main":
             trigger_next = True
         # download mp3
-        if re.match('^.*\.mp3$', tag_href):
+        if re.match(r'^.*\.mp3$', tag_href):
             print("Downloading", tag_content, "from", tag_href, "...")
             urllib.request.urlretrieve(tag_href, './' + tag_content + ".mp3")
     time.sleep(1)  # pause the code for a sec
