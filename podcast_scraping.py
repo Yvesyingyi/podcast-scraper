@@ -1,6 +1,6 @@
 # Import libraries
 import requests
-import urllib.request
+import wget
 import time
 from bs4 import BeautifulSoup
 import re
@@ -34,5 +34,5 @@ while True:
         # download mp3
         if re.match(r'^.*\.mp3$', tag_href):
             print("Downloading", tag_content, "from", tag_href, "...")
-            urllib.request.urlretrieve(tag_href, './' + tag_content + ".mp3")
+            wget.download(tag_href, './' + tag_content + ".mp3")
     time.sleep(1)  # pause the code for a sec
